@@ -1,0 +1,29 @@
+from functools import reduce
+
+from collections import Counter
+
+string1=input('enter the 1st string :')
+string2=input('enter the 2nd string :')
+
+a=string1.lower()                               #this will lower all capitalcase
+b=string2.lower()                               # to switch btw capital and lower case use function- swapcase()
+
+
+c=reduce(lambda x,y:x+y,sorted(a))              #this will sort the string1 which is in lower case i.e 'a' into alphabetical order
+d=reduce(lambda x,y:x+y,sorted(b))
+
+if c==d:
+    print('entered strings are anagram .')
+else:
+    print('not an anagram')
+
+# ========================  QUICK WAY TO CHK FOR ANAGRAM ==========================
+if Counter(string1)==Counter(string2):
+    print('yes anagram ')
+else:
+    print('not anagram')
+
+#=======================================   ASCII VALUE ========================
+
+x=input('enter the alphabet :')
+print('ascii of a =',ord(x))
